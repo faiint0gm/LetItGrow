@@ -22,7 +22,7 @@ namespace Assets.Scripts.Tap
         {
             if (other.CompareTag("BottomCollider"))
             {
-                GameManager.Instance.GetTap.ReturnDewToPool(this);
+                GameManager.Instance.GetFightManager.GetTap.ReturnDewToPool(this);
             }
         }
     }

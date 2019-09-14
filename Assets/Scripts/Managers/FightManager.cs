@@ -19,7 +19,12 @@ namespace Assets.Scripts.Managers
         private int dewHPRecoveryAmount = 0;
         [SerializeField]
         private TapSystem tapSystem = null;
-
+        [SerializeField]
+        private int roundTime;
+        private void Awake()
+        {
+            SetupBattle();
+        }
         public void SetupBattle()
         {
             GameManager.Instance.GetPlayer(PlayerType.PlayerOne).Init(GameManager.Instance.PlayerHPAmount);
@@ -28,10 +33,12 @@ namespace Assets.Scripts.Managers
 
         public void StartBattle()
         {
+            GameManager.Instance.GetCanvasSystem.GetTimer.SetupTimer(roundTime, true);
             tapSystem.SetupTap(dewsPerSecond, dewsPoolCapacity);
             tapSystem.StartDispenseDews();
         }
 
         public int DewHPRecoveryAmount { get { return dewHPRecoveryAmount; } }
+        public TapSystem GetTap { get { return tapSystem; } }
     }
 }

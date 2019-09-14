@@ -25,8 +25,7 @@ namespace Assets.Scripts.Managers
         private CanvasSystem canvasSystem;
         [SerializeField]
         private FightManager fightManager;
-        [SerializeField]
-        private int roundTime;
+        
 
         public static GameManager Instance = null;
 
@@ -47,16 +46,10 @@ namespace Assets.Scripts.Managers
 
         }
 
-
-        public void SetupBattle()
-        {
-            Debug.Log("SetupBattle");
-            
-            canvasSystem.GetTimer.SetupTimer(roundTime, true);
-        }
         public int DewHPRecoveryAmount { get { return fightManager.DewHPRecoveryAmount; } }
         public int PlayerHPAmount { get { return playerHPAmount; } }
         public CanvasSystem GetCanvasSystem { get { return canvasSystem; } }
+        public FightManager GetFightManager { get { return fightManager; } }
         public Player GetPlayer(PlayerType type)
         {
             switch(type)

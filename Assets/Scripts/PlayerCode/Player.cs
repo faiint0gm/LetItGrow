@@ -12,6 +12,8 @@ namespace Assets.Scripts.PlayerCode
         private PlayerType playerType;
         [SerializeField]
         private Collider collisionDetector;
+        [SerializeField]
+        private GameObject hold;
 
         private int hp = 0;
         private int wins = 0;
