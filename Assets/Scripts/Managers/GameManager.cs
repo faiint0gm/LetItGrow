@@ -43,6 +43,12 @@ namespace Assets.Scripts.Managers
 
         private void Start()
         {
+            canvasSystem.GetMainMenu.ShowMenu();
+        }
+
+        public void PrepareFight()
+        {
+            canvasSystem.GetMainMenu.HideMenu();
             fightManager.SetupBattle();
         }
 

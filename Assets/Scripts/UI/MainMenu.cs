@@ -12,6 +12,21 @@ namespace Assets.Scripts.UI
             gameObject.SetActive(true);
         }
 
+        public void HideMenu()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Fight()
+        {
+            GameManager.Instance.PrepareFight();
+        }
+
+        public void RunAway()
+        {
+            Application.Quit();
+        }
+
         private void OnEnable()
         {
             GameManager.Instance?.GetCanvasSystem.GetTimer.gameObject.SetActive(false);

@@ -89,7 +89,7 @@ namespace Assets.Scripts.Managers
             StopBattle();
             FinishType finish = type == PlayerType.PlayerOne ? FinishType.PlayerOneWin : FinishType.PlayerTwoWin;
             lastFinishType = finish;
-            StartCoroutine(GameManager.Instance.GetCanvasSystem.InfoTextsSystem.ShowFinishText(finish));
+            StartCoroutine(GameManager.Instance.GetCanvasSystem.InfoTextsSystem.ShowFinishText(finish,true));
         }
 
         public void NotifyDraw()
