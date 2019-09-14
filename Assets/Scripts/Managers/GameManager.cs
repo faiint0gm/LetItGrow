@@ -25,7 +25,8 @@ namespace Assets.Scripts.Managers
         private CanvasSystem canvasSystem;
         [SerializeField]
         private FightManager fightManager;
-        
+        [SerializeField]
+        private Obi.ObiSolver obiSolver;
 
         public static GameManager Instance = null;
 
@@ -56,6 +57,8 @@ namespace Assets.Scripts.Managers
         public int PlayerHPAmount { get { return playerHPAmount; } }
         public CanvasSystem GetCanvasSystem { get { return canvasSystem; } }
         public FightManager GetFightManager { get { return fightManager; } }
+        public Obi.ObiSolver GetObiSolver { get { return obiSolver; } }
+
         public Player GetPlayer(PlayerType type)
         {
             switch(type)
@@ -68,6 +71,8 @@ namespace Assets.Scripts.Managers
 
         public void ActivatePlayers(bool isActive)
         {
+            playerOne.GetObiRope.Solver = obiSolver;
+            playerTwo.GetObiRope.Solver = obiSolver;
             playerOne.gameObject.SetActive(isActive);
             playerTwo.gameObject.SetActive(isActive);
         }
