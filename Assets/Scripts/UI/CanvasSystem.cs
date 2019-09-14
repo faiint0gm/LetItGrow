@@ -11,15 +11,17 @@ namespace Assets.Scripts.UI
         [SerializeField]
         private Timer timer;
         [SerializeField]
-        private Button playButton;
-        [SerializeField]
         private PlayerUI playerOneUI;
         [SerializeField]
         private PlayerUI playerTwoUI;
         [SerializeField]
+        private InfoTexts infoTexts;
+        [SerializeField]
+        private MainMenu mainMenu;
 
+        public InfoTexts InfoTextsSystem { get { return infoTexts; } }
         public Timer GetTimer { get { return timer; } }
-        public Button PlayButton { get { return playButton; } }
+        public MainMenu GetMainMenu { get { return mainMenu; } }
 
         public PlayerUI GetPlayerUI(PlayerType type)
         {

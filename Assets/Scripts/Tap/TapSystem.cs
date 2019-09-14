@@ -84,6 +84,10 @@ namespace Assets.Scripts.Tap
             return 1.0f / dewsPerSecond;
         }
 
+        public void StopDispensing()
+        {
+            StopAllCoroutines();
+        }
         private Vector3 RandomizeStartPosition()
         {
             return new Vector3(dewsPoolObject.position.x + Random.Range(-1, 1),

@@ -43,7 +43,7 @@ namespace Assets.Scripts.Managers
 
         private void Start()
         {
-
+            fightManager.SetupBattle();
         }
 
         public int DewHPRecoveryAmount { get { return fightManager.DewHPRecoveryAmount; } }
@@ -58,6 +58,12 @@ namespace Assets.Scripts.Managers
                 case PlayerType.PlayerTwo: return playerTwo;
                 default: return null;
             }
+        }
+
+        public void ActivatePlayers(bool isActive)
+        {
+            playerOne.gameObject.SetActive(isActive);
+            playerTwo.gameObject.SetActive(isActive);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Assets.Scripts.Managers;
 
 namespace Assets.Scripts.UI
 {
@@ -56,10 +57,15 @@ namespace Assets.Scripts.UI
             if (timeLeft <= 0)
             {
                 SetTime(0);
+                GameManager.Instance.GetFightManager.NotifyTimeOut();
                 yield break;
             }
         }
 
+        public void StopTimer()
+        {
+            timerTM.gameObject.SetActive(false);
+        }
         public int GetTimeLeft { get { return timeLeft; } }
     }
 }

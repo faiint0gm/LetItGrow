@@ -22,6 +22,22 @@ namespace Assets.Scripts.Tap
         {
             if (other.CompareTag("BottomCollider"))
             {
+                GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerOne).TakeDamage(HalfHPLoseAmount);
+                GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerTwo).TakeDamage(HalfHPLoseAmount);
+                GameManager.Instance.GetFightManager.GetTap.ReturnDewToPool(this);
+            }
+
+            if (other.CompareTag("PlayerOnePot"))
+            {
+                GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerTwo).TakeDamage(hpRecoveryAmount);
+                GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerOne).GetHP(hpRecoveryAmount);
+                GameManager.Instance.GetFightManager.GetTap.ReturnDewToPool(this);
+            }
+
+            if (other.CompareTag("PlayerTwoPot"))
+            {
+                GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerOne).TakeDamage(hpRecoveryAmount);
+                GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerTwo).GetHP(hpRecoveryAmount);
                 GameManager.Instance.GetFightManager.GetTap.ReturnDewToPool(this);
             }
         }

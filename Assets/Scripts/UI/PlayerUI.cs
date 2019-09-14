@@ -30,7 +30,7 @@ namespace Assets.Scripts.UI
 
         public void SetWin(int index)
         {
-            GetPointElement(index).Setup(playerColor, RoundType.Won);
+            GetPointElement(index)?.Setup(playerColor, RoundType.Won);
         }
     }
 }
