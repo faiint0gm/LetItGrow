@@ -43,6 +43,7 @@ namespace Assets.Scripts.UI
 
         public void StartCountdown()
         {
+            gameObject.SetActive(true);
             StartCoroutine(Countdown());
         }
 

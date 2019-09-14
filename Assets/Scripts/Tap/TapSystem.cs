@@ -32,11 +32,23 @@ namespace Assets.Scripts.Tap
 
         void ResetDews()
         {
+            foreach(Dew d in drippedDews)
+            {
+                if (d != null)
+                {
+                    Destroy(d.gameObject);
+                }
+            }
+
             foreach (Dew d in dewsPool)
             {
-                Destroy(d.gameObject);
+                if (d != null)
+                {
+                    Destroy(d.gameObject);
+                }
             }
             dewsPool.Clear();
+            drippedDews.Clear();
         }
 
         public void GenerateDews()
@@ -52,11 +64,14 @@ namespace Assets.Scripts.Tap
 
         void DripNextDew()
         {
-            Dew nextDew = dewsPool.LastOrDefault();
-            nextDew.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            nextDew.transform.position = sourceTap.position;
-            drippedDews.Add(nextDew);
-            dewsPool.Remove(nextDew);
+            if (dewsPool.Count > 0)
+            {
+                Dew nextDew = dewsPool.LastOrDefault();
+                nextDew.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                nextDew.transform.position = sourceTap.position;
+                drippedDews.Add(nextDew);
+                dewsPool.Remove(nextDew);
+            }
         }
 
         public void ReturnDewToPool(Dew dew)
@@ -77,6 +92,7 @@ namespace Assets.Scripts.Tap
 
         public void StartDispenseDews()
         {
+            StopAllCoroutines();
             StartCoroutine(DewsDispenser());
         }
         private float timeToDrip()
@@ -86,7 +102,8 @@ namespace Assets.Scripts.Tap
 
         public void StopDispensing()
         {
-            StopAllCoroutines();
+            ResetDews();
+            StopCoroutine(DewsDispenser());
         }
         private Vector3 RandomizeStartPosition()
         {

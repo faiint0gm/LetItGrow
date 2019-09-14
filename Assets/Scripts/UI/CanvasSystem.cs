@@ -40,6 +40,12 @@ namespace Assets.Scripts.UI
                 case PlayerType.PlayerTwo: playerTwoUI.HpElement.SetValue(value); break;
             }
         }
+
+        public void ActivatePlayerUIs(bool isActive)
+        {
+            playerOneUI.gameObject.SetActive(isActive);
+            playerTwoUI.gameObject.SetActive(isActive);
+        }
     }
 
 }

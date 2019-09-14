@@ -32,7 +32,7 @@ namespace Assets.Scripts.UI
                 yield return new WaitForSeconds(1);
                 counterText.gameObject.SetActive(false);
             }
-            if (number <= 0)
+            if (number == 0)
             {
                 fightText.text = "FIGHT!";
                 fightText.gameObject.SetActive(true);

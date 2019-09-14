@@ -22,21 +22,29 @@ namespace Assets.Scripts.PlayerCode
         private PlayerType opponentType;
         private void Awake()
         {
-            SetPotCollisionTag();
+            SetSides();
         }
 
-        private void SetPotCollisionTag()
+        private void SetSides()
         {
             switch (playerType)
             {
-                case PlayerType.PlayerOne: collisionDetector.tag = "PlayerOnePot"; break;
-                case PlayerType.PlayerTwo: collisionDetector.tag = "PlayerTwoPot"; break;
+                case PlayerType.PlayerOne: collisionDetector.tag = "PlayerOnePot";
+                    opponentType = PlayerType.PlayerTwo;
+                    break;
+                case PlayerType.PlayerTwo: collisionDetector.tag = "PlayerTwoPot";
+                    opponentType = PlayerType.PlayerOne;
+                    break;
             }
         }
 
         public void TakeDamage(int amount)
         {
             hp -= amount;
+            if(hp<= 0)
+            {
+                hp = 0;
+            }
             GameManager.Instance.GetCanvasSystem.SetupPlayerHP(playerType, hp);
             if(hp <= 0)
             {
@@ -67,11 +75,18 @@ namespace Assets.Scripts.PlayerCode
         public void Init(int hp)
         {
             this.hp = hp;
+            GameManager.Instance.GetCanvasSystem.SetupPlayerHP(playerType, hp);
             vine.SetActive(true);
         }
 
         void Die()
         {
+            StartCoroutine(Dying());
+        }
+
+        IEnumerator Dying()
+        {
+            yield return new WaitForSeconds(0.1f);
             if (hp == 0 && GameManager.Instance.GetPlayer(opponentType).hp == 0)
             {
                 GameManager.Instance.GetFightManager.NotifyDraw();

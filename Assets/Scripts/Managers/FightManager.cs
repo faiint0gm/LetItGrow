@@ -27,20 +27,25 @@ namespace Assets.Scripts.Managers
         public bool isDrawNotifying;
         private FinishType lastFinishType;
 
-        private void Awake()
-        {
-
-        }
         public void SetupBattle()
         {
+            GameManager.Instance.GetCanvasSystem.ActivatePlayerUIs(false);
+            GameManager.Instance.GetPlayer(PlayerType.PlayerOne).Init(GameManager.Instance.PlayerHPAmount);
+            GameManager.Instance.GetPlayer(PlayerType.PlayerTwo).Init(GameManager.Instance.PlayerHPAmount);
             GameManager.Instance.ActivatePlayers(true);
             RunCountDown();
         }
 
+        void StopBattle()
+        {
+            GameManager.Instance.ActivatePlayers(false);
+            GameManager.Instance.GetCanvasSystem.GetTimer.StopTimer();
+            tapSystem.StopDispensing();
+        }
+
         public void StartBattle()
         {
-            GameManager.Instance.GetPlayer(PlayerType.PlayerOne).Init(GameManager.Instance.PlayerHPAmount);
-            GameManager.Instance.GetPlayer(PlayerType.PlayerTwo).Init(GameManager.Instance.PlayerHPAmount);
+            GameManager.Instance.GetCanvasSystem.ActivatePlayerUIs(true);
             GameManager.Instance.GetCanvasSystem.GetTimer.SetupTimer(roundTime, true);
             tapSystem.SetupTap(dewsPerSecond, dewsPoolCapacity);
             tapSystem.StartDispenseDews();
@@ -53,6 +58,7 @@ namespace Assets.Scripts.Managers
 
         public void NotifyPlayerDie(PlayerType type)
         {
+            StopBattle();
             switch (type)
             {
                 case PlayerType.PlayerOne: {
@@ -73,12 +79,14 @@ namespace Assets.Scripts.Managers
 
         public void NotifyTimeOut()
         {
+            StopBattle();
             lastFinishType = FinishType.TimeOut;
             StartCoroutine(GameManager.Instance.GetCanvasSystem.InfoTextsSystem.ShowFinishText(FinishType.TimeOut));
         }
 
         public void NotifyPlayerWin(PlayerType type)
         {
+            StopBattle();
             FinishType finish = type == PlayerType.PlayerOne ? FinishType.PlayerOneWin : FinishType.PlayerTwoWin;
             lastFinishType = finish;
             StartCoroutine(GameManager.Instance.GetCanvasSystem.InfoTextsSystem.ShowFinishText(finish));
@@ -86,6 +94,7 @@ namespace Assets.Scripts.Managers
 
         public void NotifyDraw()
         {
+            StopBattle();
             if(!isDrawNotifying)
             {
                 isDrawNotifying = true;
@@ -104,6 +113,10 @@ namespace Assets.Scripts.Managers
             {
                 GameManager.Instance.ActivatePlayers(false);
                 GameManager.Instance.GetCanvasSystem.GetMainMenu.ShowMenu();
+            }
+            else
+            {
+                SetupBattle();
             }
         }
 
