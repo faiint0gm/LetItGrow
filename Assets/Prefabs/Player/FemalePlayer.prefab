@@ -146,6 +146,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4281262649922368458, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: m_TagString
+      value: HandleTwo
+      objectReference: {fileID: 0}
     - target: {fileID: 2074071816423226266, guid: 789f9bd4a831f0448acd77095b031978,
         type: 3}
       propertyPath: chainPrefab

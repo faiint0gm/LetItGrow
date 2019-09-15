@@ -14,6 +14,8 @@ namespace Assets.Scripts.PlayerCode
         private Collider collisionDetector;
         [SerializeField]
         private GameObject hold;
+        [SerializeField]
+        private Vector3 interruptMove;
 
         [SerializeField]
         private float xMinValue;
@@ -29,6 +31,8 @@ namespace Assets.Scripts.PlayerCode
         private PlayerType opponentType;
 
         private Vector3 startPosition;
+
+        private bool interrupt;
 
         private void Awake()
         {
@@ -114,6 +118,10 @@ namespace Assets.Scripts.PlayerCode
 
         void Movement()
         {
+            if(interrupt)
+            {
+                return;
+            }
             Vector3 movement = Vector3.zero;
             Vector3 leftThumb = new Vector3
             {
@@ -249,6 +257,15 @@ namespace Assets.Scripts.PlayerCode
                 return false;
         }
 
+        public void SetInterruptInput(bool isInterrupting)
+        {
+            interrupt = isInterrupting;
+        }
+
+        public void GetHit()
+        {
+            hold.transform.localPosition += interruptMove;
+        }
         private void DebugPad()
         {
             if (Input.GetAxis("RightThumbX") != 0)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Managers;
 
 namespace Assets.Scripts.PlayerCode
 {
@@ -18,6 +19,32 @@ namespace Assets.Scripts.PlayerCode
             handleTag = gameObject.tag;
             elementTag = chainSystem.chainPrefab.tag;
             enemyTag = handleTag == "HandleOne" ? "TentacleTwo" : "TentacleOne";
+        }
+
+        private void OnTriggerEnter(Collider collider)
+        {
+            if(collider.gameObject.CompareTag(enemyTag))
+            {
+                GetEnemy().SetInterruptInput(true);
+                GetEnemy().GetHit();
+                GetEnemy().SetInterruptInput(false);
+            }
+        }
+
+        Player GetEnemy()
+        {
+            if(enemyTag == "TentacleOne")
+            {
+                return GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerOne);
+            }
+            else if (enemyTag == "TentacleTwo")
+            {
+                return GameManager.Instance.GetPlayer(Enums.PlayerType.PlayerTwo);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
