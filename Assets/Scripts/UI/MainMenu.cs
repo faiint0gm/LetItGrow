@@ -20,12 +20,14 @@ namespace Assets.Scripts.UI
 
         public void Fight()
         {
+            GameManager.Instance.GetCanvasSystem.PlayButtonSound();
             GameManager.Instance.gameState = Enums.GameState.InBattle;
             GameManager.Instance.GetCanvasSystem.Tutorial.RunTutorial();
         }
 
         public void RunAway()
         {
+            GameManager.Instance.GetCanvasSystem.PlayButtonSound();
             Application.Quit();
         }
 

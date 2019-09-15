@@ -30,6 +30,11 @@ namespace Assets.Scripts.PlayerCode
         private MeshRenderer[] leafs;
         [SerializeField]
         private Texture[] leafGraphics;
+        
+        public AudioClip beatClip;
+        [SerializeField]
+        private AudioClip slurpClip;
+
 
         private int hp = 0;
         private int wins = 0;
@@ -85,6 +90,7 @@ namespace Assets.Scripts.PlayerCode
 
         public void GetHP(int amount)
         {
+            GameManager.Instance.GetSoundManager.PlayOneShot(1, slurpClip);
             hp += amount;
             SetupLeaves();
             if (hp>=100)

@@ -242,6 +242,16 @@ PrefabInstance:
       propertyPath: leafGraphics.Array.data[2]
       value: 
       objectReference: {fileID: 2800000, guid: 636afbfe0029ae84faac62cebcb9b326, type: 3}
+    - target: {fileID: 3497898705117735423, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: beatClip
+      value: 
+      objectReference: {fileID: 8300000, guid: caab49a7ceb3b7144ae7cd62d37515ac, type: 3}
+    - target: {fileID: 3497898705117735423, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: slurpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 489e9a57d78676c49b16cb093d09ab66, type: 3}
     - target: {fileID: 4281262649922368458, guid: 789f9bd4a831f0448acd77095b031978,
         type: 3}
       propertyPath: m_Layer

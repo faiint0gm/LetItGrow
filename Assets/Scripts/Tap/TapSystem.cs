@@ -18,6 +18,10 @@ namespace Assets.Scripts.Tap
         private Transform sourceTap;
         [SerializeField]
         private Transform dewsPoolObject;
+        [SerializeField]
+        private AudioClip blopClip;
+        [SerializeField]
+        private AudioSource tapSource;
 
         private List<Dew> dewsPool = new List<Dew>();
         private List<Dew> drippedDews = new List<Dew>();
@@ -66,6 +70,7 @@ namespace Assets.Scripts.Tap
         {
             if (dewsPool.Count > 0)
             {
+                tapSource.PlayOneShot(blopClip);
                 Dew nextDew = dewsPool.LastOrDefault();
                 nextDew.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 nextDew.transform.position = sourceTap.position;

@@ -15,6 +15,8 @@ namespace Assets.Scripts.Managers
         [SerializeField]
         private AudioSource sfxSource;
         [SerializeField]
+        private AudioSource sfxSecondSource;
+        [SerializeField]
         private AudioSource musicSource;
         [SerializeField]
         private AudioMixer audioMixer;
@@ -39,6 +41,17 @@ namespace Assets.Scripts.Managers
             sfxSource.Play();
         }
 
+        public void PlayOneShot(int source, AudioClip clip)
+        {
+            if(source == 0)
+            {
+                sfxSource.PlayOneShot(clip);
+            }
+            else
+            {
+                sfxSecondSource.PlayOneShot(clip);
+            }
+        }
         public void SetVolume(SoundType type, float value)
         {
             switch(type)

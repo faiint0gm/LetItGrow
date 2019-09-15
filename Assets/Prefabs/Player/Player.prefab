@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b9109c7a00fb84589911665f4fb57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 3497898705117735423}
   chainSystem: {fileID: 2074071816423226266}
 --- !u!65 &5965969249460573543
 BoxCollider:
@@ -306,6 +307,10 @@ MonoBehaviour:
   xMaxValue: 40
   yMinValue: -30
   yMaxValue: 0
+  leafs: []
+  leafGraphics: []
+  beatClip: {fileID: 0}
+  slurpClip: {fileID: 0}
 --- !u!1001 &2892626627950833808
 PrefabInstance:
   m_ObjectHideFlags: 0

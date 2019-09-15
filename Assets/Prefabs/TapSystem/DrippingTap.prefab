@@ -440,6 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4237926044382216798}
   - component: {fileID: 4237926044382216799}
+  - component: {fileID: 7305634922209582344}
   m_Layer: 0
   m_Name: DrippingTap
   m_TagString: Untagged
@@ -482,6 +483,105 @@ MonoBehaviour:
     type: 3}
   sourceTap: {fileID: 1976787228822554366}
   dewsPoolObject: {fileID: 4237926043989305296}
+  blopClip: {fileID: 8300000, guid: f325002a9e4c272438d8c002261f0cf5, type: 3}
+  tapSource: {fileID: 7305634922209582344}
+--- !u!82 &7305634922209582344
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237926044382216796}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243942593683651108, guid: 4d761ca1338778440993d96da117a88a,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6013111750459961867
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,11 +901,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1976787228822554366}
     m_Modifications:
-    - target: {fileID: -9027196316584862983, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
+    - target: {fileID: -927199367670048503, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c79a53f074ace12429fd75650f8e0bcb, type: 2}
+      propertyPath: m_Name
+      value: szlauf
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -876,16 +976,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 20.276
       objectReference: {fileID: 0}
-    - target: {fileID: -1344734248306294228, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
+    - target: {fileID: -9027196316584862983, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c79a53f074ace12429fd75650f8e0bcb, type: 2}
-    - target: {fileID: -927199367670048503, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
-        type: 3}
-      propertyPath: m_Name
-      value: szlauf
-      objectReference: {fileID: 0}
     - target: {fileID: 830292355350320048, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -902,6 +997,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: c79a53f074ace12429fd75650f8e0bcb, type: 2}
     - target: {fileID: 7801655267501062854, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c79a53f074ace12429fd75650f8e0bcb, type: 2}
+    - target: {fileID: -1344734248306294228, guid: 3a831fdd0d77a8c47b3a921d6897aff5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -58,6 +58,7 @@ namespace Assets.Scripts.Managers
             {
                 if(Input.GetButtonDown("TriangleButton"))
                 {
+                    GetCanvasSystem.PlayButtonSound();
                     canvasSystem.GetMainMenu.RunAway();
                 }
             }
@@ -65,6 +66,7 @@ namespace Assets.Scripts.Managers
             {
                 if(Input.GetButtonDown("TriangleButton"))
                 {
+                    GetCanvasSystem.PlayButtonSound();
                     canvasSystem.GetPauseMenu.Show();
                 }
             }
@@ -72,6 +74,7 @@ namespace Assets.Scripts.Managers
             {
                 if(Input.GetButtonDown("TriangleButton"))
                 {
+                    GetCanvasSystem.PlayButtonSound();
                     canvasSystem.Tutorial.gameObject.SetActive(false);
                     canvasSystem.GetMainMenu.ShowMenu();
                 }
@@ -80,6 +83,7 @@ namespace Assets.Scripts.Managers
 
         public void PrepareFight()
         {
+            GameManager.Instance.GetCanvasSystem.PlayButtonSound();
             gameState = GameState.InBattle;
             canvasSystem.GetMainMenu.HideMenu();
             fightManager.SetupBattle();

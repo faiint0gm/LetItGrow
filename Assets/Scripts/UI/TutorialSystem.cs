@@ -40,6 +40,7 @@ namespace Assets.Scripts.UI
         {
             if(Input.GetButtonDown("XButton"))
             {
+                GameManager.Instance.GetCanvasSystem.PlayButtonSound();
                 NextStep();
             }
         }

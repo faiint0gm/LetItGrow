@@ -285,6 +285,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305634922209582344, guid: 32ae4d77d8b1b4d409c0a9655bb86887,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32ae4d77d8b1b4d409c0a9655bb86887, type: 3}
 --- !u!114 &950321253 stripped
@@ -791,11 +796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4950080194923580364, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
+    - target: {fileID: 4950080194923580365, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: sfxSecondSource
+      value: 
+      objectReference: {fileID: 4950080194366617185}
     - target: {fileID: 4950080194923580366, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -853,16 +858,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142154621788594863, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Volume
+      value: 0.805
       objectReference: {fileID: 0}
     - target: {fileID: 5786750888201141192, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Volume
+      value: 0.805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 804fe2030c4b2cc4f97dd0bc4bca2992, type: 3}
+--- !u!82 &4950080194366617185 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4106304080412248150, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
+    type: 3}
+  m_PrefabInstance: {fileID: 4950080194366617184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5194203458545895903
 PrefabInstance:
   m_ObjectHideFlags: 0

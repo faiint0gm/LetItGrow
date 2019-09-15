@@ -22,6 +22,10 @@ namespace Assets.Scripts.UI
         private TutorialSystem tutorial;
         [SerializeField]
         private PauseMenu pauseMenu;
+        [SerializeField]
+        private AudioSource audioSource;
+        [SerializeField]
+        private AudioClip buttonClip;
 
         public InfoTexts InfoTextsSystem { get { return infoTexts; } }
         public Timer GetTimer { get { return timer; } }
@@ -51,6 +55,11 @@ namespace Assets.Scripts.UI
         {
             playerOneUI.gameObject.SetActive(isActive);
             playerTwoUI.gameObject.SetActive(isActive);
+        }
+
+        public void PlayButtonSound()
+        {
+            audioSource.PlayOneShot(buttonClip);
         }
     }
 

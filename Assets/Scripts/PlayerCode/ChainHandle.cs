@@ -8,6 +8,8 @@ namespace Assets.Scripts.PlayerCode
     public class ChainHandle : MonoBehaviour
     {
         [SerializeField]
+        Player player;
+        [SerializeField]
         VerletChain chainSystem;
 
         string handleTag;
@@ -25,6 +27,7 @@ namespace Assets.Scripts.PlayerCode
         {
             if(collider.gameObject.CompareTag(enemyTag))
             {
+                GameManager.Instance.GetSoundManager.PlayOneShot(0, player.beatClip);
                 GetEnemy().SetInterruptInput(true);
                 GetEnemy().GetHit();
                 GetEnemy().SetInterruptInput(false);

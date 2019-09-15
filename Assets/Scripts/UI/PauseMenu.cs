@@ -11,12 +11,14 @@ namespace Assets.Scripts.UI
         {
             if(Input.GetButtonDown("TriangleButton"))
             {
+                GameManager.Instance.GetCanvasSystem.PlayButtonSound();
                 GameManager.Instance.GetCanvasSystem.InfoTextsSystem.StopAll();
                 GameManager.Instance.GetFightManager.HandleRoundFinish(true);
                 Hide(true);
             }
             if(Input.GetButtonDown("XButton"))
             {
+                GameManager.Instance.GetCanvasSystem.PlayButtonSound();
                 Hide(false);
             }
 
