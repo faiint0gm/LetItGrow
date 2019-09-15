@@ -211,6 +211,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8153212837702261016, guid: 92a413241a588fb49867baa2ddddc405,
+        type: 3}
+      propertyPath: interruptMove.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153212837702261016, guid: 92a413241a588fb49867baa2ddddc405,
+        type: 3}
+      propertyPath: interruptMove.y
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a413241a588fb49867baa2ddddc405, type: 3}
 --- !u!1001 &322887486
@@ -432,6 +442,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MalePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 30258330215573052, guid: a238de6d6f227ac40b3efac1ad1eec3b,
+        type: 3}
+      propertyPath: interruptMove.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 30258330215573052, guid: a238de6d6f227ac40b3efac1ad1eec3b,
+        type: 3}
+      propertyPath: interruptMove.y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7196828098972948983, guid: a238de6d6f227ac40b3efac1ad1eec3b,
         type: 3}

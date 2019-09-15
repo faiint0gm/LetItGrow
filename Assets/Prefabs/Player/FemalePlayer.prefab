@@ -141,6 +141,16 @@ PrefabInstance:
       propertyPath: playerType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3497898705117735423, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: interruptMove.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497898705117735423, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: interruptMove.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4281262649922368458, guid: 789f9bd4a831f0448acd77095b031978,
         type: 3}
       propertyPath: m_Layer
