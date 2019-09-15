@@ -14,15 +14,26 @@ namespace Assets.Scripts.PlayerCode
         private Collider collisionDetector;
         [SerializeField]
         private GameObject hold;
+
         [SerializeField]
-        private GameObject vine;
+        private float xMinValue;
+        [SerializeField]
+        private float xMaxValue;
+        [SerializeField]
+        private float yMinValue;
+        [SerializeField]
+        private float yMaxValue;
 
         private int hp = 0;
         private int wins = 0;
         private PlayerType opponentType;
+
+        private Vector3 startPosition;
+
         private void Awake()
         {
             SetSides();
+            startPosition = hold.transform.localPosition;
         }
 
         private void SetSides()
@@ -76,7 +87,6 @@ namespace Assets.Scripts.PlayerCode
         {
             this.hp = hp;
             GameManager.Instance.GetCanvasSystem.SetupPlayerHP(playerType, hp);
-            vine.SetActive(true);
         }
 
         void Die()
@@ -104,59 +114,158 @@ namespace Assets.Scripts.PlayerCode
 
         void Movement()
         {
+            Vector3 movement = Vector3.zero;
+            Vector3 leftThumb = new Vector3
+            {
+                x = Input.GetAxis("LeftThumbX"),
+                y = -Input.GetAxis("LeftThumbY"),
+                z = 0
+            };
+
+            Vector3 rightThumb = new Vector3
+            {
+            x = Input.GetAxis("RightThumbX"),
+            y = -Input.GetAxis("RightThumbY"),
+            z = 0
+            };
+
             switch (playerType)
             {
                 case PlayerType.PlayerOne:
                     {
-                        hold.transform.localPosition += new Vector3
+                        if ((leftThumb.x < 0 && LockNegativeX() && leftThumb.y < 0 && LockNegativeY()) ||
+                            (leftThumb.x > 0 && LockPositiveX() && leftThumb.y > 0 && LockPositiveY()) ||
+                            (leftThumb.x < 0 && LockNegativeX() && leftThumb.y > 0 && LockPositiveY()) ||
+                            (leftThumb.x > 0 && LockPositiveX() && leftThumb.y < 0 && LockNegativeY()))
                         {
-                            x = Input.GetAxis("LeftThumbX"),
-                            y = Input.GetAxis("LeftThumbY"),
-                            z = 0
-                        };
+                            movement = Vector3.zero;
+                        }
+                        else if ((leftThumb.x < 0 && LockNegativeX()) ||
+                            (leftThumb.x > 0 && LockPositiveX()))
+                        {
+                            movement = new Vector3
+                            {
+                                x = 0,
+                                y = leftThumb.y,
+                                z = 0
+                            };
+                        }
+                        else if ((leftThumb.y < 0 && LockNegativeY()) ||
+                            (leftThumb.y > 0 && LockPositiveY()))
+                        {
+                            movement = new Vector3
+                            {
+                                x = leftThumb.x,
+                                y = 0,
+                                z = 0
+                            };
+                        }
+                        else
+                            movement = new Vector3
+                            {
+                                x = leftThumb.x,
+                                y = leftThumb.y,
+                                z = 0
+                            };
                         break;
                     }
                 case PlayerType.PlayerTwo:
                     {
-                        hold.transform.localPosition += new Vector3
+                        if ((rightThumb.x < 0 && LockNegativeX() && rightThumb.y < 0 && LockNegativeY()) ||
+                            (rightThumb.x > 0 && LockPositiveX() && rightThumb.y > 0 && LockPositiveY()) ||
+                            (rightThumb.x < 0 && LockNegativeX() && rightThumb.y > 0 && LockPositiveY()) ||
+                            (rightThumb.x > 0 && LockPositiveX() && rightThumb.y < 0 && LockNegativeY()))
                         {
-                            x = Input.GetAxis("RightThumbX"),
-                            y = Input.GetAxis("RightThumbY"),
-                            z = 0
-                        };
+                            movement = Vector3.zero;
+                        }
+                        else if ((rightThumb.x < 0 && LockNegativeX()) ||
+                            (rightThumb.x > 0 && LockPositiveX()))
+                        {
+                            movement = new Vector3
+                            {
+                                x = 0,
+                                y = rightThumb.y,
+                                z = 0
+                            };
+                        }
+                        else if ((rightThumb.y < 0 && LockNegativeY()) ||
+                            (rightThumb.y > 0 && LockPositiveY()))
+                        {
+                            movement = new Vector3
+                            {
+                                x = rightThumb.x,
+                                y = 0,
+                                z = 0
+                            };
+                        }
+                        else
+                        movement = new Vector3
+                            {
+                                x = rightThumb.x,
+                                y = rightThumb.y,
+                                z = 0
+                            };
                         break;
                     }
             }
-        }
-
-        public void SetVineActive(bool isActive)
-        {
-            vine.SetActive(isActive);
+            hold.transform.localPosition += movement;
         }
 
         private void Update()
         {
-            //DebugPad();
+            DebugPad();
             Movement();
+        }
+
+        bool LockNegativeX()
+        {
+            if (hold.transform.localPosition.x <= startPosition.x + xMinValue)
+                return true;
+            else
+                return false;
+        }
+
+        bool LockPositiveX()
+        {
+            if (hold.transform.localPosition.x >= startPosition.x + xMaxValue)
+                return true;
+            else
+                return false;
+        }
+
+        bool LockNegativeY()
+        {
+            if (hold.transform.localPosition.y <= startPosition.y + yMinValue)
+                return true;
+            else
+                return false;
+        }
+
+        bool LockPositiveY()
+        {
+            if (hold.transform.localPosition.y >= startPosition.y + yMaxValue)
+                return true;
+            else
+                return false;
         }
 
         private void DebugPad()
         {
             if (Input.GetAxis("RightThumbX") != 0)
             {
-                Debug.Log("Right Thumb X");
+                Debug.Log("Right Thumb X : " + Input.GetAxis("RightThumbX"));
             }
             if (Input.GetAxis("RightThumbY") != 0)
             {
-                Debug.Log("Right Thumb Y");
+                Debug.Log("Right Thumb Y: " + Input.GetAxis("RightThumbY"));
             }
             if (Input.GetAxis("LeftThumbX") != 0)
             {
-                Debug.Log("Left Thumb X");
+                Debug.Log("Left Thumb X: " + Input.GetAxis("LeftThumbX"));
             }
             if (Input.GetAxis("LeftThumbY") != 0)
             {
-                Debug.Log("Left Thumb Y");
+                Debug.Log("Left Thumb Y: " + Input.GetAxis("LeftThumbY"));
             }
         }
     }

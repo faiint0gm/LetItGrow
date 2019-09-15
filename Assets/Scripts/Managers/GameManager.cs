@@ -25,7 +25,6 @@ namespace Assets.Scripts.Managers
         private CanvasSystem canvasSystem;
         [SerializeField]
         private FightManager fightManager;
-        
 
         public static GameManager Instance = null;
 
@@ -56,6 +55,7 @@ namespace Assets.Scripts.Managers
         public int PlayerHPAmount { get { return playerHPAmount; } }
         public CanvasSystem GetCanvasSystem { get { return canvasSystem; } }
         public FightManager GetFightManager { get { return fightManager; } }
+
         public Player GetPlayer(PlayerType type)
         {
             switch(type)
