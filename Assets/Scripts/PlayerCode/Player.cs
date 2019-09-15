@@ -33,13 +33,21 @@ namespace Assets.Scripts.PlayerCode
         private Vector3 startPosition;
 
         private bool interrupt;
+        private bool startPositionSaved;
 
         private void Awake()
         {
             SetSides();
-            startPosition = hold.transform.localPosition;
         }
 
+        private void OnEnable()
+        {
+            if (!startPositionSaved)
+            {
+                startPosition = hold.transform.localPosition;
+                startPositionSaved = true;
+            }
+        }
         private void SetSides()
         {
             switch (playerType)
@@ -91,6 +99,10 @@ namespace Assets.Scripts.PlayerCode
         {
             this.hp = hp;
             GameManager.Instance.GetCanvasSystem.SetupPlayerHP(playerType, hp);
+            if (startPositionSaved)
+            {
+                hold.transform.localPosition = startPosition;
+            }
         }
 
         void Die()

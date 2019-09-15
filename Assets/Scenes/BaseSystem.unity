@@ -156,6 +156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FemalePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3300114961372253452, guid: 92a413241a588fb49867baa2ddddc405,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1345799123551266515, guid: 92a413241a588fb49867baa2ddddc405,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -442,6 +447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MalePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665649846739841576, guid: a238de6d6f227ac40b3efac1ad1eec3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 30258330215573052, guid: a238de6d6f227ac40b3efac1ad1eec3b,
         type: 3}
