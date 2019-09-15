@@ -14,8 +14,6 @@ namespace Assets.Scripts.PlayerCode
         private Collider collisionDetector;
         [SerializeField]
         private GameObject hold;
-        [SerializeField]
-        private Obi.ObiRope obiRope;
 
         [SerializeField]
         private float xMinValue;
@@ -270,7 +268,5 @@ namespace Assets.Scripts.PlayerCode
                 Debug.Log("Left Thumb Y: " + Input.GetAxis("LeftThumbY"));
             }
         }
-
-        public Obi.ObiRope GetObiRope { get { return obiRope; } }
     }
 }

@@ -42,8 +42,8 @@ public class VerletChain : MonoBehaviour {
 
 		for (int i = 0; i < pointCount; i++) {
 			GameObject link = Instantiate(chainPrefab, Vector3.zero, Quaternion.identity);
-			link.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90f));
-			link.transform.localScale =  Vector3.one * lineLength / (segments  * 2);
+			link.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0f));
+			link.transform.localScale =  Vector3.one * lineLength / (segments  * 1.2f);
 			link.transform.parent = this.transform;
 
 			float p = (float)i / (float)pointCount;
@@ -84,7 +84,7 @@ public class VerletChain : MonoBehaviour {
 			point.g.transform.position = point.pos;
 		}
 
-		SetAngles();
+		//SetAngles();
 	}
 
 
