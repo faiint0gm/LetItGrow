@@ -9,7 +9,7 @@ namespace Assets.Scripts.Tap
     public class Dew : MonoBehaviour
     {
         private int hpRecoveryAmount = 0;
-
+        public Vector3 startForce = new Vector3(0, -3, 0);
         public void Setup(int hpRecoveryAmount)
         {
             this.hpRecoveryAmount = hpRecoveryAmount;

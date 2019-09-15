@@ -69,6 +69,7 @@ namespace Assets.Scripts.Tap
                 Dew nextDew = dewsPool.LastOrDefault();
                 nextDew.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 nextDew.transform.position = sourceTap.position;
+                nextDew.GetComponent<Rigidbody>().AddForce(nextDew.startForce, ForceMode.Acceleration);
                 drippedDews.Add(nextDew);
                 dewsPool.Remove(nextDew);
             }
