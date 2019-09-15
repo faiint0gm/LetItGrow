@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Enums;
 using Assets.Scripts.Managers;
+using System;
 
 namespace Assets.Scripts.PlayerCode
 {
@@ -25,6 +26,10 @@ namespace Assets.Scripts.PlayerCode
         private float yMinValue;
         [SerializeField]
         private float yMaxValue;
+        [SerializeField]
+        private MeshRenderer[] leafs;
+        [SerializeField]
+        private Texture[] leafGraphics;
 
         private int hp = 0;
         private int wins = 0;
@@ -66,6 +71,7 @@ namespace Assets.Scripts.PlayerCode
         public void TakeDamage(int amount)
         {
             hp -= amount;
+            SetupLeaves();
             if(hp<= 0)
             {
                 hp = 0;
@@ -80,7 +86,8 @@ namespace Assets.Scripts.PlayerCode
         public void GetHP(int amount)
         {
             hp += amount;
-            if(hp>=100)
+            SetupLeaves();
+            if (hp>=100)
             {
                 hp = 100;
             }
@@ -100,6 +107,7 @@ namespace Assets.Scripts.PlayerCode
         public void Init(int hp)
         {
             this.hp = hp;
+            SetupLeaves();
             GameManager.Instance.GetCanvasSystem.SetupPlayerHP(playerType, hp);
             if (startPositionSaved)
             {
@@ -302,6 +310,75 @@ namespace Assets.Scripts.PlayerCode
             if (Input.GetAxis("LeftThumbY") != 0)
             {
                 Debug.Log("Left Thumb Y: " + Input.GetAxis("LeftThumbY"));
+            }
+        }
+
+        void SetupLeaves()
+        {
+            if (hp > 83)
+            {
+                foreach(var m in leafs)
+                {
+                    m.material.SetTexture("_MainTex", leafGraphics[0]);
+                    m.gameObject.SetActive(true);
+                }
+            }
+            else if (hp > 66)
+            {
+                for(int i = 0; i<3; i++)
+                {
+                    leafs[i].material.SetTexture("_MainTex", leafGraphics[0]);
+                    leafs[i].gameObject.SetActive(true);
+                }
+                for(int i = 3; i<6; i++)
+                {
+                    leafs[i].material.SetTexture("_MainTex", leafGraphics[1]);
+                    leafs[i].gameObject.SetActive(true);
+                }
+            }
+            else if (hp > 50)
+            {
+                foreach (var m in leafs)
+                {
+                    m.material.SetTexture("_MainTex", leafGraphics[1]);
+                    m.gameObject.SetActive(true);
+                }
+                leafs[0].gameObject.SetActive(false);
+            }
+            else if (hp > 33)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    leafs[i].material.SetTexture("_MainTex", leafGraphics[1]);
+                    leafs[i].gameObject.SetActive(true);
+                }
+                for (int i = 4; i < 6; i++)
+                {
+                    leafs[i].material.SetTexture("_MainTex", leafGraphics[2]);
+                    leafs[i].gameObject.SetActive(true);
+                }
+                leafs[5].gameObject.SetActive(false);
+            }
+            else if (hp > 16)
+            {
+                for (int i = 1; i < 5; i++)
+                {
+                    leafs[i].material.SetTexture("_MainTex", leafGraphics[2]);
+                    leafs[i].gameObject.SetActive(true);
+                }
+                leafs[0].gameObject.SetActive(false);
+                leafs[3].gameObject.SetActive(false);
+                leafs[5].gameObject.SetActive(false);
+            }
+            else
+            {
+                foreach (var m in leafs)
+                {
+                    m.gameObject.SetActive(false);
+                }
+                leafs[4].material.SetTexture("_MainTex", leafGraphics[2]);
+                leafs[4].gameObject.SetActive(true);
+                
             }
         }
     }
