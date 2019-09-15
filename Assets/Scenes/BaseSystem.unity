@@ -206,6 +206,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a413241a588fb49867baa2ddddc405, type: 3}
+--- !u!114 &306223579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4950080194923580365, guid: 804fe2030c4b2cc4f97dd0bc4bca2992,
+    type: 3}
+  m_PrefabInstance: {fileID: 4950080194366617184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a011e99fb779ec947a2f298601d7da73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &322887486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -973,6 +985,11 @@ PrefabInstance:
       propertyPath: fightManager
       value: 
       objectReference: {fileID: 8012920015553182021}
+    - target: {fileID: 9060890894507490876, guid: bf6d4eea80eabaa4bb0a0dd46b1ccfae,
+        type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 306223579}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf6d4eea80eabaa4bb0a0dd46b1ccfae, type: 3}
 --- !u!1001 &7532226653913738924
@@ -1040,6 +1057,51 @@ PrefabInstance:
     - target: {fileID: 7532226653947892587, guid: 992d9ffcd6333724795613e785fa1d21,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572812899906264814, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572812899906264814, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572812899906264814, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572812899906264814, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538554707884426693, guid: 992d9ffcd6333724795613e785fa1d21,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

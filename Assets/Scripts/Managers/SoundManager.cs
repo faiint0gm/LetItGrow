@@ -47,5 +47,15 @@ namespace Assets.Scripts.Managers
                 case SoundType.MUSIC: audioMixer.SetFloat("MusicVolume", value); break;
             }
         }
+
+        public void PauseMusic()
+        {
+            musicSource.Pause();
+        }
+
+        public void ReturnMusic()
+        {
+            musicSource.UnPause();
+        }
     }
 }

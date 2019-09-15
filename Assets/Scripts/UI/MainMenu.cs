@@ -9,6 +9,7 @@ namespace Assets.Scripts.UI
     {
         public void ShowMenu()
         {
+            GameManager.Instance.gameState = Enums.GameState.InMenu;
             gameObject.SetActive(true);
         }
 
@@ -19,7 +20,8 @@ namespace Assets.Scripts.UI
 
         public void Fight()
         {
-            GameManager.Instance.PrepareFight();
+            GameManager.Instance.gameState = Enums.GameState.InBattle;
+            GameManager.Instance.GetCanvasSystem.Tutorial.RunTutorial();
         }
 
         public void RunAway()

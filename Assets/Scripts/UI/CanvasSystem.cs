@@ -18,10 +18,16 @@ namespace Assets.Scripts.UI
         private InfoTexts infoTexts;
         [SerializeField]
         private MainMenu mainMenu;
+        [SerializeField]
+        private TutorialSystem tutorial;
+        [SerializeField]
+        private PauseMenu pauseMenu;
 
         public InfoTexts InfoTextsSystem { get { return infoTexts; } }
         public Timer GetTimer { get { return timer; } }
         public MainMenu GetMainMenu { get { return mainMenu; } }
+        public TutorialSystem Tutorial { get { return tutorial; } }
+        public PauseMenu GetPauseMenu { get { return pauseMenu; } }
 
         public PlayerUI GetPlayerUI(PlayerType type)
         {

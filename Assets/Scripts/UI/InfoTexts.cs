@@ -60,5 +60,13 @@ namespace Assets.Scripts.UI
             finalText.gameObject.SetActive(false);
             GameManager.Instance.GetFightManager.HandleRoundFinish(isGameOver);
         }
+
+        public void StopAll()
+        {
+            StopAllCoroutines();
+            counterText.gameObject.SetActive(false);
+            finalText.gameObject.SetActive(false);
+            fightText.gameObject.SetActive(false);
+        }
     }
 }
