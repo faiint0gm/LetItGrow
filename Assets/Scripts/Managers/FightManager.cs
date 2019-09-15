@@ -81,6 +81,14 @@ namespace Assets.Scripts.Managers
         {
             StopBattle();
             lastFinishType = FinishType.TimeOut;
+            if(GameManager.Instance.GetPlayer(PlayerType.PlayerOne).HP > GameManager.Instance.GetPlayer(PlayerType.PlayerTwo).HP)
+            {
+                NotifyPlayerDie(PlayerType.PlayerTwo);
+            }
+            else if (GameManager.Instance.GetPlayer(PlayerType.PlayerTwo).HP > GameManager.Instance.GetPlayer(PlayerType.PlayerOne).HP)
+            {
+                NotifyPlayerDie(PlayerType.PlayerOne);
+            }
             StartCoroutine(GameManager.Instance.GetCanvasSystem.InfoTextsSystem.ShowFinishText(FinishType.TimeOut));
         }
 

@@ -35,6 +35,8 @@ namespace Assets.Scripts.PlayerCode
         private bool interrupt;
         private bool startPositionSaved;
 
+
+        public int HP { get { return hp; } }
         private void Awake()
         {
             SetSides();
