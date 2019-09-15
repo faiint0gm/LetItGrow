@@ -6,9 +6,11 @@ namespace Assets.Scripts.Enums
 {
     public enum FinishType
     {
+        None,
         PlayerOneWin,
         PlayerTwoWin,
         Draw,
-        TimeOut
+        TimeOut,
+        GameOver
     }
 }

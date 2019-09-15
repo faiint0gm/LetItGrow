@@ -29,6 +29,7 @@ namespace Assets.Scripts.Managers
 
         public void SetupBattle()
         {
+            lastFinishType = FinishType.None;
             GameManager.Instance.GetCanvasSystem.ActivatePlayerUIs(false);
             GameManager.Instance.GetPlayer(PlayerType.PlayerOne).Init(GameManager.Instance.PlayerHPAmount);
             GameManager.Instance.GetPlayer(PlayerType.PlayerTwo).Init(GameManager.Instance.PlayerHPAmount);
@@ -119,12 +120,18 @@ namespace Assets.Scripts.Managers
         {
             if(isGameOver)
             {
+                lastFinishType = FinishType.GameOver;
                 GameManager.Instance.ActivatePlayers(false);
+                StopBattle();
+                GameManager.Instance.GetCanvasSystem.ActivatePlayerUIs(false);
                 GameManager.Instance.GetCanvasSystem.GetMainMenu.ShowMenu();
             }
             else
             {
-                SetupBattle();
+                if (lastFinishType != FinishType.GameOver)
+                {
+                    SetupBattle();
+                }
             }
         }
 

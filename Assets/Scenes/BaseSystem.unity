@@ -1269,7 +1269,7 @@ PrefabInstance:
     - target: {fileID: 283314058099064072, guid: a97d983a86d367f48b5e433944096a15,
         type: 3}
       propertyPath: roundTime
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 283314058099064072, guid: a97d983a86d367f48b5e433944096a15,
         type: 3}
@@ -1279,7 +1279,7 @@ PrefabInstance:
     - target: {fileID: 283314058099064072, guid: a97d983a86d367f48b5e433944096a15,
         type: 3}
       propertyPath: dewHPRecoveryAmount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97d983a86d367f48b5e433944096a15, type: 3}
