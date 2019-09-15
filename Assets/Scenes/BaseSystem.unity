@@ -438,11 +438,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MalePlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 30258330215573052, guid: a238de6d6f227ac40b3efac1ad1eec3b,
-        type: 3}
-      propertyPath: yMinValue
-      value: -30
-      objectReference: {fileID: 0}
     - target: {fileID: 7196828098972948983, guid: a238de6d6f227ac40b3efac1ad1eec3b,
         type: 3}
       propertyPath: m_LocalPosition.x

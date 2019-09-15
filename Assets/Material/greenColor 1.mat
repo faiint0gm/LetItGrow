@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: greenColor 1
-  m_Shader: {fileID: 10767, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -86,10 +86,10 @@ Material:
     - _FlipbookMode: 0
     - _Focus: -100
     - _GlossMapScale: 1
-    - _Glossiness: 0.518
+    - _Glossiness: 0.184
     - _GlossyReflections: 1
     - _LightingEnabled: 1
-    - _Metallic: 0.334
+    - _Metallic: 0.34
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -111,7 +111,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.15848222, g: 0.4056604, b: 0.05549129, a: 1}
+    - _Color: {r: 0.20797817, g: 0.5849056, b: 0.052420773, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _Specular: {r: 0.5990566, g: 1, b: 0.63790715, a: 0}

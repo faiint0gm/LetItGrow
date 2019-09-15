@@ -72,5 +72,16 @@ PrefabInstance:
       propertyPath: playerType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4281262649922368458, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074071816423226266, guid: 789f9bd4a831f0448acd77095b031978,
+        type: 3}
+      propertyPath: chainPrefab
+      value: 
+      objectReference: {fileID: 3137151926432114561, guid: 483bb7e9d06842c4c9b69b694d095b1f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 789f9bd4a831f0448acd77095b031978, type: 3}
