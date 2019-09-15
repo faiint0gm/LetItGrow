@@ -32,5 +32,13 @@ namespace Assets.Scripts.UI
         {
             GetPointElement(index)?.Setup(playerColor, RoundType.Won);
         }
+
+        public void ResetRounds()
+        {
+            foreach(PointElement e in pointElements)
+            {
+                e.Setup(playerColor, RoundType.NotSet);
+            }
+        }
     }
 }

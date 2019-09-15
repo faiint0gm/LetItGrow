@@ -130,6 +130,11 @@ namespace Assets.Scripts.PlayerCode
             GameManager.Instance.GetFightManager.NotifyPlayerWin(playerType);
         }
 
+        public void ResetWins()
+        {
+            wins = 0;
+        }
+
         void Movement()
         {
             if(interrupt)

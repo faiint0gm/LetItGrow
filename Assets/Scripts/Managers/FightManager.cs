@@ -123,6 +123,10 @@ namespace Assets.Scripts.Managers
                 lastFinishType = FinishType.GameOver;
                 GameManager.Instance.ActivatePlayers(false);
                 StopBattle();
+                GameManager.Instance.GetPlayer(PlayerType.PlayerOne).ResetWins();
+                GameManager.Instance.GetPlayer(PlayerType.PlayerTwo).ResetWins();
+                GameManager.Instance.GetCanvasSystem.GetPlayerUI(PlayerType.PlayerOne).ResetRounds();
+                GameManager.Instance.GetCanvasSystem.GetPlayerUI(PlayerType.PlayerTwo).ResetRounds();
                 GameManager.Instance.GetCanvasSystem.ActivatePlayerUIs(false);
                 GameManager.Instance.GetCanvasSystem.GetMainMenu.ShowMenu();
             }
