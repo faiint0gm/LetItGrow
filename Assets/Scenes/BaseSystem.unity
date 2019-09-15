@@ -1059,86 +1059,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9006806584268671876, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 9006806584268671876, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9006806584268671876, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9006806584268671876, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9006806584268671876, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.a
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320213903558663678, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075397826902043719, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075397826902043719, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075397826902043719, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075397826902043719, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075397826902043719, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2200056960905352129, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538554707884426693, guid: 992d9ffcd6333724795613e785fa1d21,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 992d9ffcd6333724795613e785fa1d21, type: 3}
 --- !u!1001 &8012920015553182020
@@ -1213,21 +1133,6 @@ PrefabInstance:
       propertyPath: tapSystem
       value: 
       objectReference: {fileID: 950321253}
-    - target: {fileID: 283314058099064072, guid: a97d983a86d367f48b5e433944096a15,
-        type: 3}
-      propertyPath: roundTime
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 283314058099064072, guid: a97d983a86d367f48b5e433944096a15,
-        type: 3}
-      propertyPath: winLimit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 283314058099064072, guid: a97d983a86d367f48b5e433944096a15,
-        type: 3}
-      propertyPath: dewHPRecoveryAmount
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97d983a86d367f48b5e433944096a15, type: 3}
 --- !u!114 &8012920015553182021 stripped

@@ -47,3 +47,6 @@ MonoBehaviour:
   dewsPerSecond: 1
   dewHPRecoveryAmount: 10
   tapSystem: {fileID: 0}
+  roundTime: 120
+  winLimit: 2
+  isDrawNotifying: 0
